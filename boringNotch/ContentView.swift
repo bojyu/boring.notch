@@ -580,6 +580,8 @@ struct ContentView: View {
                                 dropInteraction: vm.dropInteraction,
                                 animation: vm.animation
                             )
+                        case .agents:
+                            AgentQuotaView()
                         }
                     }
                 }

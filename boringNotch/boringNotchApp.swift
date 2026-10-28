@@ -80,6 +80,8 @@ struct DynamicNotchApp: App {
                 }
                 NSLog("Failed to migrate legacy Boring Notch app bundle at %@", sourceURL.path)
             }
+            // The Agents build has its own bundle ID; an official update would replace it with the stock app.
+            guard Bundle.main.bundleIdentifier == "theboringteam.boringnotch" else { return }
             updaterController.startUpdater()
         }
     }
@@ -205,6 +207,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         SettingsWindowController.shared.setCamera(camera)
         migrateDisplayModeIfNeeded()
+        AgentQuotaManager.shared.activate()
 
         NotificationCenter.default.addObserver(
             self,

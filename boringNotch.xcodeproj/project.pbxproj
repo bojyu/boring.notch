@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA01A9E100000000000000A4 /* AgentHUDCore in Frameworks */ = {isa = PBXBuildFile; productRef = AA01A9E100000000000000A2 /* AgentHUDCore */; };
+		AA01A9E100000000000000A5 /* AgentHUDSupport in Frameworks */ = {isa = PBXBuildFile; productRef = AA01A9E100000000000000A3 /* AgentHUDSupport */; };
 		07FE456E7AEA085D9FCA6D97 /* MeetingLinkDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B2A5E5F4D28F1DD9CD0B09 /* MeetingLinkDetector.swift */; };
 		110029272E84FD4C00035A57 /* TemporaryFileStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110029262E84FD4C00035A57 /* TemporaryFileStorageService.swift */; };
 		1100292A2E8691B400035A57 /* FileShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110029292E8691B400035A57 /* FileShareView.swift */; };
@@ -320,6 +322,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		AA01A9E100000000000000A6 /* Agents */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Agents; sourceTree = "<group>"; };
 		112FB72F2CCF12CC0015238C /* private */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = private; sourceTree = "<group>"; };
 		11DAAB303061BDED00E15887 /* Settings */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Settings; sourceTree = "<group>"; };
 		11DAAB463061BE1600E15887 /* LiveActivities */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LiveActivities; sourceTree = "<group>"; };
@@ -354,6 +357,8 @@
 				B19016222CC15B3D00E3F12E /* Defaults in Frameworks */,
 				111BE95D2ECD71E10079DD4E /* AsyncXPCConnection in Frameworks */,
 				B1628B922CC260C0003D8DF3 /* SwiftUIIntrospect in Frameworks */,
+				AA01A9E100000000000000A4 /* AgentHUDCore in Frameworks */,
+				AA01A9E100000000000000A5 /* AgentHUDSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +565,7 @@
 				149E0B982C737D26006418B1 /* Webcam */,
 				11DAAB463061BE1600E15887 /* LiveActivities */,
 				11DAAB303061BDED00E15887 /* Settings */,
+				AA01A9E100000000000000A6 /* Agents */,
 				B186542F2C6F455E000B926A /* Notch */,
 				9A0887332C7AFF7E00C160EA /* Tabs */,
 				B186542E2C6F453B000B926A /* Music */,
@@ -826,6 +832,7 @@
 			fileSystemSynchronizedGroups = (
 				112FB72F2CCF12CC0015238C /* private */,
 				11DAAB303061BDED00E15887 /* Settings */,
+				AA01A9E100000000000000A6 /* Agents */,
 				11DAAB463061BE1600E15887 /* LiveActivities */,
 				11DAAB583061BE3000E15887 /* extensions */,
 				8137A8BA990F4D9CBA56CC7A /* Shared */,
@@ -844,6 +851,8 @@
 				111BEA502ECFBF7F0079DD4E /* MacroVisionKit */,
 				111BEA5E2ED07A340079DD4E /* MacroVisionKit */,
 				111BEA6E2ED166E20079DD4E /* MacroVisionKit */,
+				AA01A9E100000000000000A2 /* AgentHUDCore */,
+				AA01A9E100000000000000A3 /* AgentHUDSupport */,
 			);
 			productName = dynamicNotch;
 			productReference = 14CEF4122C5CAED300855D72 /* Boring Notch.app */;
@@ -905,6 +914,7 @@
 			);
 			mainGroup = 14CEF4092C5CAED200855D72;
 			packageReferences = (
+				AA01A9E100000000000000A1 /* XCLocalSwiftPackageReference "../agent-hud-open" */,
 				14D032182C68F32E0096E6A1 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				14D0321B2C68F3350096E6A1 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				B18654372C6F4990000B926A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
@@ -1334,7 +1344,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = "2.8-beta.0";
-				PRODUCT_BUNDLE_IDENTIFIER = theboringteam.boringnotch;
+				PRODUCT_BUNDLE_IDENTIFIER = theboringteam.boringnotch.agents;
 				PRODUCT_MODULE_NAME = boringNotch;
 				PRODUCT_NAME = "Boring Notch";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1403,7 +1413,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = "2.8-beta.0";
-				PRODUCT_BUNDLE_IDENTIFIER = theboringteam.boringnotch;
+				PRODUCT_BUNDLE_IDENTIFIER = theboringteam.boringnotch.agents;
 				PRODUCT_MODULE_NAME = boringNotch;
 				PRODUCT_NAME = "Boring Notch";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1510,6 +1520,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		AA01A9E100000000000000A1 /* XCLocalSwiftPackageReference "../agent-hud-open" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../agent-hud-open";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		111BE95B2ECD71E10079DD4E /* XCRemoteSwiftPackageReference "AsyncXPCConnection" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -1602,6 +1619,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AA01A9E100000000000000A2 /* AgentHUDCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA01A9E100000000000000A1 /* XCLocalSwiftPackageReference "../agent-hud-open" */;
+			productName = AgentHUDCore;
+		};
+		AA01A9E100000000000000A3 /* AgentHUDSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA01A9E100000000000000A1 /* XCLocalSwiftPackageReference "../agent-hud-open" */;
+			productName = AgentHUDSupport;
+		};
 		111BE95C2ECD71E10079DD4E /* AsyncXPCConnection */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 111BE95B2ECD71E10079DD4E /* XCRemoteSwiftPackageReference "AsyncXPCConnection" */;

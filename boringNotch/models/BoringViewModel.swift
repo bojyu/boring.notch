@@ -204,6 +204,10 @@ final class BoringViewModel: NSObject, ObservableObject {
 
         // Set the current view to shelf if it contains files and the user enables openShelfByDefault
         // Otherwise, if the user has not enabled openLastShelfByDefault, set the view to home
+        // The Agents tab stays where it was left, when its own setting says so.
+        if coordinator.currentView == .agents && Defaults[.agentsTabEnabled] && Defaults[.agentsStayOnTab] {
+            return
+        }
         if Defaults[.boringShelf] && !ShelfStateViewModel.shared.isEmpty && Defaults[.openShelfByDefault] {
             coordinator.currentView = .shelf
         } else if !coordinator.openLastTabByDefault {

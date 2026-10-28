@@ -5,6 +5,7 @@
 //  Created by Hugo Persson on 2024-08-25.
 //
 
+import Defaults
 import SwiftUI
 
 struct TabModel: Identifiable {
@@ -19,12 +20,24 @@ let tabs = [
     TabModel(label: "Shelf", icon: "tray.fill", view: .shelf)
 ]
 
+let agentsTab = TabModel(label: "Agents", icon: "gauge.with.dots.needle.67percent", view: .agents)
+
 struct TabSelectionView: View {
     @ObservedObject var coordinator = BoringViewCoordinator.shared
+    @ObservedObject var shelfState = ShelfStateViewModel.shared
+    @Default(.agentsTabEnabled) var agentsTabEnabled
     @Namespace var animation
+
+    /// Home and Shelf as the header has always shown them, then Agents while it is switched on.
+    private var shownTabs: [TabModel] {
+        let showsShelf = (!shelfState.isEmpty || coordinator.alwaysShowTabs) && Defaults[.boringShelf]
+        var shown = showsShelf ? tabs : tabs.filter { $0.view != .shelf }
+        if agentsTabEnabled { shown.append(agentsTab) }
+        return shown
+    }
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(tabs) { tab in
+            ForEach(shownTabs) { tab in
                     TabButton(label: tab.label, icon: tab.icon, selected: coordinator.currentView == tab.view) {
                         withAnimation(.smooth) {
                             coordinator.currentView = tab.view
