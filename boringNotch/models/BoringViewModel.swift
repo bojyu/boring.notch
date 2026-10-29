@@ -208,6 +208,12 @@ final class BoringViewModel: NSObject, ObservableObject {
         if coordinator.currentView == .agents && Defaults[.agentsTabEnabled] && Defaults[.agentsStayOnTab] {
             return
         }
+        if coordinator.currentView == .system && Defaults[.systemTabEnabled] && Defaults[.systemStayOnTab] {
+            return
+        }
+        if coordinator.currentView == .servers && Defaults[.serversTabEnabled] && Defaults[.serversStayOnTab] {
+            return
+        }
         if Defaults[.boringShelf] && !ShelfStateViewModel.shared.isEmpty && Defaults[.openShelfByDefault] {
             coordinator.currentView = .shelf
         } else if !coordinator.openLastTabByDefault {

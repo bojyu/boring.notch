@@ -323,6 +323,8 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AA01A9E100000000000000A6 /* Agents */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Agents; sourceTree = "<group>"; };
+		AA01A9E100000000000000A7 /* System */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = System; sourceTree = "<group>"; };
+		AA01A9E100000000000000A8 /* Servers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Servers; sourceTree = "<group>"; };
 		112FB72F2CCF12CC0015238C /* private */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = private; sourceTree = "<group>"; };
 		11DAAB303061BDED00E15887 /* Settings */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Settings; sourceTree = "<group>"; };
 		11DAAB463061BE1600E15887 /* LiveActivities */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LiveActivities; sourceTree = "<group>"; };
@@ -566,6 +568,8 @@
 				11DAAB463061BE1600E15887 /* LiveActivities */,
 				11DAAB303061BDED00E15887 /* Settings */,
 				AA01A9E100000000000000A6 /* Agents */,
+				AA01A9E100000000000000A7 /* System */,
+				AA01A9E100000000000000A8 /* Servers */,
 				B186542F2C6F455E000B926A /* Notch */,
 				9A0887332C7AFF7E00C160EA /* Tabs */,
 				B186542E2C6F453B000B926A /* Music */,
@@ -833,6 +837,8 @@
 				112FB72F2CCF12CC0015238C /* private */,
 				11DAAB303061BDED00E15887 /* Settings */,
 				AA01A9E100000000000000A6 /* Agents */,
+				AA01A9E100000000000000A7 /* System */,
+				AA01A9E100000000000000A8 /* Servers */,
 				11DAAB463061BE1600E15887 /* LiveActivities */,
 				11DAAB583061BE3000E15887 /* extensions */,
 				8137A8BA990F4D9CBA56CC7A /* Shared */,

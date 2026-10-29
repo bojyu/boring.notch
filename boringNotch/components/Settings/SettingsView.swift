@@ -17,6 +17,8 @@ private enum SettingsTab: String, CaseIterable, Identifiable {
     case calendar
     case shelf
     case agents
+    case system
+    case servers
     case mirror
     case battery
     case osd
@@ -40,6 +42,8 @@ private enum SettingsTab: String, CaseIterable, Identifiable {
         case .calendar: "Calendar"
         case .shelf: "Shelf"
         case .agents: "Agents"
+        case .system: "System"
+        case .servers: "Servers"
         case .mirror: "Mirror"
         case .battery: "Battery"
         case .osd: "OSD"
@@ -58,6 +62,8 @@ private enum SettingsTab: String, CaseIterable, Identifiable {
         case .calendar: .system("calendar")
         case .shelf: .system("tray.and.arrow.down")
         case .agents: .system("gauge.with.dots.needle.67percent")
+        case .system: .system("cpu")
+        case .servers: .system("server.rack")
         case .mirror: .system("video")
         case .battery: .system("battery.100.bolt")
         case .osd: .system("dial.medium.fill")
@@ -114,6 +120,10 @@ struct SettingsView: View {
                     ShelfSettingsView()
                 case .agents:
                     AgentsSettingsView()
+                case .system:
+                    SystemSettingsView()
+                case .servers:
+                    ServersSettingsView()
                 case .mirror:
                     WebcamSettingsView(camera: camera)
                 case .shortcuts:

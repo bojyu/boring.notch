@@ -582,6 +582,10 @@ struct ContentView: View {
                             )
                         case .agents:
                             AgentQuotaView()
+                        case .system:
+                            SystemStatusView()
+                        case .servers:
+                            ServersView()
                         }
                     }
                 }

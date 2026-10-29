@@ -250,6 +250,20 @@ final class XPCHelperClient: NSObject, ObservableObject {
 
     // MARK: - Screen Brightness
 
+    /// The apps holding the most memory, summed over their processes; nil when the helper cannot answer.
+    func appMemoryUsage(limit: Int) async -> [AppMemoryUsage]? {
+        do {
+            let service = ensureRemoteService()
+            let data: Data? = try await service.withContinuation { service, continuation in
+                service.appMemoryUsage(limit) { continuation.resume(returning: $0) }
+            }
+            return data.flatMap { try? JSONDecoder().decode([AppMemoryUsage].self, from: $0) }
+        } catch {
+            lastError = .transport(underlying: error)
+            return nil
+        }
+    }
+
     func currentScreenBrightness() async -> Float? {
         do {
             let service = ensureRemoteService()

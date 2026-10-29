@@ -169,6 +169,16 @@ class BoringNotchXPCHelper: NSObject, BoringNotchXPCHelperProtocol {
             Self.watcher.configureFilter(bundleIDs: Set(bundleIDs), allApps: allApps)
         }
     }
+    // MARK: - App memory (System tab)
+
+    private static let memoryQueue = DispatchQueue(label: "BoringNotchXPCHelper.memory", qos: .utility)
+
+    @objc func appMemoryUsage(_ limit: Int, with reply: @escaping (Data?) -> Void) {
+        Self.memoryQueue.async {
+            reply(try? JSONEncoder().encode(AppMemoryReader.topApps(limit: limit)))
+        }
+    }
+
     private class KeyboardBrightnessClient {
         private static let keyboardID: UInt64 = 1
         private var clientInstance: NSObject?
